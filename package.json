@@ -1,0 +1,59 @@
+{
+  "name": "webpack-ts-mocha-nyc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:webpack": "webpack \"./test/add.spec.ts\"",
+    "build:gulp": "gulp build",
+    "test": "npm run build:gulp && npm test:mocha",
+    "test:mocha": "mocha ./dist/main.spec.js",
+    "cover": "npm run build:gulp && npm run cover:mocha && npm cover:report",
+    "cover:mocha": "nyc --silent npm run test:mocha",
+    "cover:report": "nyc report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KraftyFX/webpack-ts-mocha-nyc.git"
+  },
+  "author": "rafikhan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KraftyFX/webpack-ts-mocha-nyc/issues"
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "reporter": [
+      "html",
+      "text-summary"
+    ],
+    "cache": true,
+    "sourceMap": false,
+    "instrument": false
+  },
+  "homepage": "https://github.com/KraftyFX/webpack-ts-mocha-nyc#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.14",
+    "@types/gulp": "^4.0.7",
+    "@types/mocha": "^8.0.3",
+    "@types/webpack-node-externals": "^2.5.0",
+    "@types/webpack-stream": "^3.2.11",
+    "chai": "^4.2.0",
+    "gulp": "^4.0.2",
+    "istanbul-instrumenter-loader": "^3.0.1",
+    "mocha": "^8.2.0",
+    "mocha-loader": "^5.1.5",
+    "mocha-webpack": "^1.1.0",
+    "nyc": "^15.1.0",
+    "ts-loader": "^8.0.6",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^4.1.0",
+    "webpack-node-externals": "^2.5.2",
+    "webpack-stream": "^6.1.0"
+  }
+}

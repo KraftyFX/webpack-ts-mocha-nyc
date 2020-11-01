@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "strict": true,
+    "module": "commonjs",
+    "experimentalDecorators": true,
+    "target": "es5",
+    "noLib": false,
+  }
+}
